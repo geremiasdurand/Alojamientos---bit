@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     "inicio",
     "usuario",
     "comments",
-    "alojamientos"
 ]
 
 MIDDLEWARE = [
