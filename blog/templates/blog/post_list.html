@@ -1,0 +1,16 @@
+﻿{% extends 'blog/base.html' %}
+
+<div class="page-header">
+    <h1>Comentarios de Alojamientos</h1>
+</div>
+
+    {% block content %}
+       {% for post in posts %}
+<div>
+    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+    <p>{{ post.text|linebreaksbr }}</p>
+    <p> publicado: {{ post.published_date }}</p>
+    <a href="{% url 'post_detail' pk=post.pk %}">Comentarios: {{ post.approved_comments.count }}</a>
+</div>
+       {% endfor %}
+    {% endblock %}
