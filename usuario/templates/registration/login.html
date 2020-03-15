@@ -1,11 +1,19 @@
-{% include "inicio/base.html" %}
+{% include "blog/base.html" %}
 {% load crispy_forms_tags %}
 
 {% block content %}
-<form method="post" class="from-group">
-  {% csrf_token %}
-	{{form|crispy}}
-  <p>¿No tienes una cuenta? Crea una <a href="/register">aquí</a></p>
-  <button type="submit" class="btn btn-success">Login</button>
-</form>
+
+<div class="row justify-content-center">
+    <div class="col-6">
+        <h1 class="mt-2">Iniciar Sesión</h1>
+        <hr class="mt-0 mb-4">
+        <form method="post" class="from-group">
+            {% csrf_token %}
+            {{form|crispy}}
+            <p>¿No tienes una cuenta? Crea una <a href="/register">aquí</a></p>
+            <button type="submit" class="btn btn-info">Iniciar sesión</button>
+        </form>
+
+    </div>
+</div>
 {% endblock %}

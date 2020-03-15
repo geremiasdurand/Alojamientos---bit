@@ -1,10 +1,18 @@
 ﻿{% extends 'blog/base.html' %}
 
 {% block content %}
-<h1>Agregar comentario</h1>
-<form method="POST" class="post-form">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="save btn btn-default">Enviar</button>
-</form>
+<div class="row justify-content-center">
+    <div class="col-6">
+
+        <hr class="mt-0 mb-4">
+        <h1 class="mt-2">Añadir opinión</h1>
+        <form method="POST" class="post-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-info">Añadir opinión</button>
+        </form>
+
+    </div>
+</div>
 {% endblock %}
+

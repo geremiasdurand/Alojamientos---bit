@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\alojamientos_site",
-    "\\inicio",
-    "\\usuario"
+    ""
   ],
-  "SelectedNode": "\\usuario\\views.py",
+  "SelectedNode": "\\usuario",
   "PreviewInSolutionExplorer": false
 }

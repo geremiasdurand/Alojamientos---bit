@@ -1,12 +1,21 @@
-{% include "inicio/base.html" %}
+{% include "blog/base.html" %}
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <form method="POST" class="form-group">
 
-      {% csrf_token %}
-      {{ form|crispy }}
 
-	<button type="submit" class="btn btn-success">Register</button>
-    </form>
+<div class="row justify-content-center">
+    <div class="col-6">
+        <h1 class="mt-2">Registrarse</h1>
+        <hr class="mt-0 mb-4">
+        <form method="POST" class="form-group">
+
+            {% csrf_token %}
+            {{ form|crispy }}
+
+            <button type="submit" class="btn btn-info">Registrarme</button>
+        </form>
+    </div>
+</div>
 {% endblock %}
+      

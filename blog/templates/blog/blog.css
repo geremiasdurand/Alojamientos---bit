@@ -1,0 +1,49 @@
+﻿nav .btn a, .post-home .btn a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav .btn {
+    margin:10px 0 0 10px;
+}
+
+
+.text-muted {
+    font-size:12px;
+}
+
+
+.post-home .lead{
+    margin-top:20px;
+
+}
+
+.jumbotron {
+    padding: 2rem 2rem !important;
+    background-color: #fff;
+    border-bottom: 1px dashed #ff5a5f;
+}
+
+    .jumbotron h1, h1, h2, h3, h4, h5, h6, nav a {
+        color: #ff5a5f;
+        font-family: 'Bree Serif', serif;
+    }
+
+
+h4 a, .card-body a, .post-home h3 {
+    color: #ff5a5f;
+}
+
+.card-body .btn-outline-secondary {
+    border-color: #ff5a5f;
+}
+
+.add-home {
+    margin-bottom: 20px;
+}
+
+.add-home a {color:#fff;}
+
+footer {
+    padding:40px;
+}
