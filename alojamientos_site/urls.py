@@ -20,8 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("inicio.urls")),
     path("", include("usuario.urls")),
-    path('alojamientos/', include('blog.urls')),
-    path('login_redirect/', include('blog.urls')),
-    path('logout_redirect/', include('blog.urls')),
-    path('redirect_register_done/', include('blog.urls')),
+    path('alojamientos/', include('alojamientos.urls')),
 ]

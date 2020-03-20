@@ -1,0 +1,44 @@
+﻿{% extends 'inicio/base.html' %}
+
+
+<!-- Example row of columns -->
+        {% block content %}
+{% if user.is_authenticated %}
+    <div class="row">
+        <div class="add-home">
+            <button type="button" class="btn btn-warning"><a href="{% url 'alojamiento_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span>Agregar alojamiento</a></button>
+        </div>
+        </div>
+        {% endif %}
+        <div class="row">
+            {% for alojamiento in alojamientos %}
+
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <a href="{% url 'alojamiento_detail' pk=alojamiento.pk %}">
+                        <img class="card-img-top" src="http://shineit.solutions/blog/alojamiento.png">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title"><a href="{% url 'alojamiento_detail' pk=alojamiento.pk %}">{{ alojamiento.titulo }}</a></h4>
+                        {{ alojamiento.texto|linebreaksbr }}</p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'alojamiento_detail' pk=alojamiento.pk %}">Ver más</a></button>
+                            </div>
+                            <div class="btn-group">
+                              {% if user.is_authenticated and alojamiento.autor == request.user %}
+                                <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'alojamiento_delete' pk=alojamiento.pk %}"
+                  onClick="return confirm('¿Seguro que quieres borrar a {{alojamiento.titulo}}?');">Borrar</a></button>
+                              {% endif %}
+                            </div>
+                            <small class="text-muted"><a href="{% url 'alojamiento_detail' pk=alojamiento.pk %}">Opiniones: {{ alojamiento.comentario.count }}</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <ul>
+</ul>
+        {% endblock %}

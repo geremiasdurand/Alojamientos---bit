@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "inicio",
     "usuario",
-    'blog.apps.BlogConfig',
+    'alojamientos',
 ]
 
 MIDDLEWARE = [
@@ -126,5 +126,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 CRISPY_TEMPLATE_PACK="bootstrap4"
 
-LOGIN_REDIRECT_URL = "/login_redirect"
-LOGOUT_REDIRECT_URL = "/logout_redirect"
+LOGIN_REDIRECT_URL = "/alojamientos/"
+LOGOUT_REDIRECT_URL = "/alojamientos/"

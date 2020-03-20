@@ -1,0 +1,65 @@
+﻿{% extends 'inicio/base.html' %}
+
+
+{% block content %}
+
+
+<div class="alojamiento-home">
+    <h3>{{ alojamiento.titulo }}</h3>
+
+    {% if alojamiento.published_date %}
+    <small class="text-muted">Publicado el: {{ alojamiento.published_date }}</small>
+    {% endif %}
+
+
+    <p class="lead">{{ alojamiento.texto|linebreaksbr }}</p>
+
+    {% if user.is_authenticated and alojamiento.autor != request.user %}
+    <form class="form-inline">
+        <button class="btn btn-info" type="button"><a href="{% url 'añadir_comentario' pk=alojamiento.pk %}">Añadir opinión</a></button>
+
+    </form>
+
+    {% else %}
+    <hr> <h6 align=center>No puedes opinar en tu propio alojamiento</h6>
+    {% endif %}
+
+    {% if not user.is_authenticated %}
+    <form class="form-inline">
+        <button class="btn btn-info" type="button"><a href="/login">Inicia sesión para añadir tu opinión</a></button>
+
+    </form>
+    {% endif %}
+
+
+</div>
+<hr>
+
+<h3>Opiniones:</h3>
+    {% for comentario in alojamiento.comentario.all %}
+
+<div class="comment">
+    <div class="alert alert-warning" role="alert">
+
+        <div class="date">
+            <small class="text-muted">
+                {{ comentario.created_date }}
+            </small>
+            {% if comentario.autor == request.user %}
+            <a class="btn btn-default" href="{% url 'eliminar_comentario' pk=comentario.pk %}">Borrar comentario</a>
+            {% endif %}
+        </div>
+        <strong>{{ comentario.autor }}</strong>
+        <p>{{ comentario.texto|linebreaks }}</p>
+    </div>
+
+</div>
+
+    {% empty %}
+<p>Aún no hay comentarios :(</p>
+    {% endfor %}
+
+
+
+
+    {% endblock %}

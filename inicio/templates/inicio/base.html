@@ -1,63 +1,96 @@
-﻿<!doctype html>
-  <html>
-    <head>
-      <style>
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #333;
-      }
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://shineit.solutions/blog/blog.css" />
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+    <title>Alojamientos para estudiantes</title>
 
-      li {
-        float: left;
-        border-right:1px solid #bbb;
-      }
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-      li:last-child {
-        border-right: none;
-      }
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
 
-      li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-      }
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">HomeCheck <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/alojamientos">Alojamientos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Quienes somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
 
-      li a:hover:not(.active) {
-        background-color: #111;
-      }
+                </ul>
 
-      .active {
-        background-color: #4CAF50;
-      }
-      </style>
-    </head>
-    <body>
+                {% if not user.is_authenticated %}
+                <form class="form-inline">
+                    <button class="btn btn-info" type="button"><a href="/login">Iniciar Sesión</a></button>
+                    <button class="btn btn-info" type="button"><a href="/register">Registrarse</a></button>
+                </form>
+                {% endif %}
 
-      <ul>
-        <li><a class="active" href="/">Inicio</a></li>
-        <li><a href="/alojamientos">Alojamientos</a></li>
-        <li style="float:right"><a href="/login">Login</a></li>
-        <li style="float:right"><a href="/register">Registro</a></li>
-      </ul>
+                {% if user.is_authenticated %}
 
+                <h6 align="center">Usuario: {{request.user}}</h6>
+
+                <form class="form-inline">
+                    <button class="btn btn-info" type="button"><a href="/logout">Cerrar sesión</a></button>
+
+                </form>
+
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+
+
+    <main role="main">
+
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <h1 align="center">HomeCheck</h1>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+
+            <hr>
+
+        </div> <!-- /container -->
+        <!-- <footer>
+            <div class="container">
+                <div class="row justify-content-center">
+                    @2020 Todos los derechos reservados
+                    </div>
+                </div>
+        </footer>
+        -->
+    </main>
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>
-  </html>
-
-<div>
-  <! #BOOTSTRAP !>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <! END_BOOTSTRAP !>
-</div>
+</html>
