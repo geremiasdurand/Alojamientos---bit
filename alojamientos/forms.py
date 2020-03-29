@@ -5,7 +5,7 @@ class AlojamientoForm(forms.ModelForm):
 
     class Meta:
         model = Alojamiento
-        fields = ("titulo", "texto",)
+        fields = ("titulo", "barrio", "direccion", "telefono", "texto",)
 
 
 

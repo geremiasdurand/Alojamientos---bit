@@ -20,7 +20,7 @@
                     </a>
                     <div class="card-body">
                         <h4 class="card-title"><a href="{% url 'alojamiento_detail' pk=alojamiento.pk %}">{{ alojamiento.titulo }}</a></h4>
-                        {{ alojamiento.texto|linebreaksbr }}</p>
+                        {{ alojamiento.direccion|linebreaksbr }}</p>
 
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">

@@ -5,14 +5,22 @@
 
 
 <div class="alojamiento-home">
-    <h3>{{ alojamiento.titulo }}</h3>
+    <h3 align=center class=text-uppercase>{{ alojamiento.titulo }}</h3>
 
-    {% if alojamiento.published_date %}
-    <small class="text-muted">Publicado el: {{ alojamiento.published_date }}</small>
+
+    {% if user.is_authenticated and alojamiento.autor == request.user %}
+    <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'alojamiento_editar' pk=alojamiento.pk %}">Editar</a></button>
+    </div>
     {% endif %}
 
-
-    <p class="lead">{{ alojamiento.texto|linebreaksbr }}</p>
+    <div class="row mx-md-n5">
+        <div class="col px-md-5"><div class="p-3 lead">Dirección: {{alojamiento.direccion}}</div></div>
+        <div class="col px-md-5"><div class="p-3 lead">Contacto: +598 {{alojamiento.telefono}}</div></div>
+    </div>
+<hr>
+    <p align=center class="lead">Descripción:</p>
+    <p align=center class="lead">{{ alojamiento.texto|linebreaksbr }}</p>
 
     {% if user.is_authenticated and alojamiento.autor != request.user %}
     <form class="form-inline">
