@@ -27,7 +27,7 @@
                                 <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'alojamiento_detail' pk=alojamiento.pk %}">Ver más</a></button>
                             </div>
                             <div class="btn-group">
-                              {% if user.is_authenticated and alojamiento.autor == request.user %}
+                              {% if user.is_authenticated and alojamiento.autor == request.user or request.user.is_superuser == 1 %}
                                 <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'alojamiento_delete' pk=alojamiento.pk %}"
                   onClick="return confirm('¿Seguro que quieres borrar a {{alojamiento.titulo}}?');">Borrar</a></button>
                               {% endif %}

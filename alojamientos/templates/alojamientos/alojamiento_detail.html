@@ -8,7 +8,7 @@
     <h3 align=center class=text-uppercase>{{ alojamiento.titulo }}</h3>
 
 
-    {% if user.is_authenticated and alojamiento.autor == request.user %}
+    {% if user.is_authenticated and alojamiento.autor == request.user or request.user.is_superuser == 1%}
     <div class="btn-group">
         <button type="button" class="btn btn-sm btn-outline-secondary"><a href="{% url 'alojamiento_editar' pk=alojamiento.pk %}">Editar</a></button>
     </div>
@@ -53,7 +53,7 @@
             <small class="text-muted">
                 {{ comentario.created_date }}
             </small>
-            {% if comentario.autor == request.user %}
+            {% if comentario.autor == request.user or request.user.is_superuser == 1%}
             <a class="btn btn-default" href="{% url 'eliminar_comentario' pk=comentario.pk %}">Borrar comentario</a>
             {% endif %}
         </div>
