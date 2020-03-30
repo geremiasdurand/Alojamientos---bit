@@ -30,6 +30,7 @@ class Alojamiento(models.Model):
     telefono = models.DecimalField(max_digits=15, decimal_places=0)
     texto = models.TextField()
     fecha_de_creacion = models.DateTimeField(default=timezone.now)
+    is_sponsored = models.BooleanField(default=False)
 
     def __str__(self):
         return self.titulo
