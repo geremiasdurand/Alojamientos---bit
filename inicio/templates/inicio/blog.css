@@ -18,6 +18,7 @@ nav .btn, nav .btn:hover {
         }
 
 
+
 nav .btn.border-left {
     border-left:1px solid;
 }
@@ -43,6 +44,16 @@ nav .btn.border-left {
         font-family: 'Bellota Text', cursive;
     }
 
+h4, h5, h6 {
+    color: #17a2b8;
+    font-family: 'Bellota Text', cursive;
+}
+
+.footer-home a {
+    color: #17a2b8;
+    font-weight: bold;
+}
+
 
 h4 a, .card-body a, .post-home h3 {
     color: #ff5a5f;
@@ -50,6 +61,11 @@ h4 a, .card-body a, .post-home h3 {
 
 .card-body .btn-outline-secondary {
     border-color: #ff5a5f;
+}
+
+    .card-body .btn-outline-secondary:hover {
+    background-color:white; 
+    text-decoration:none;
 }
 
 .add-home {
