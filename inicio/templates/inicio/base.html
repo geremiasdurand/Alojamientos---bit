@@ -6,11 +6,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="http://shineit.solutions/blog/blog.css" />
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bellota+Text&display=swap" rel="stylesheet">
     <title>Alojamientos para estudiantes</title>
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -20,7 +21,7 @@
                 <ul class="navbar-nav mr-auto">
 
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">HomeCheck <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/alojamientos">Alojamientos</a>
@@ -37,7 +38,7 @@
                 {% if not user.is_authenticated %}
                 <form class="form-inline">
                     <button class="btn btn-info" type="button"><a href="/login">Iniciar Sesión</a></button>
-                    <button class="btn btn-info" type="button"><a href="/register">Registrarse</a></button>
+                    <button class="btn btn-info border-left" type="button"><a href="/register">Registrarse</a></button>
                 </form>
                 {% endif %}
 
