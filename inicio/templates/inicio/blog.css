@@ -64,9 +64,14 @@ h4 a, .card-body a, .post-home h3 {
 }
 
     .card-body .btn-outline-secondary:hover {
-    background-color:white; 
-    text-decoration:none;
-}
+        background-color: white;
+        border-color: #17a2b8;
+    }
+
+    .card-body .btn-outline-secondary a:hover {
+      color: #17a2b8;
+      text-decoration:none;
+    }
 
 .add-home {
     margin-bottom: 20px;
@@ -74,6 +79,10 @@ h4 a, .card-body a, .post-home h3 {
 
 .add-home a {color:#fff;}
 
+.alojamiento-home .btn-info a {
+    color:#fff;
+} 
+
 footer {
-    padding:40px;
+    padding: 40px;
 }

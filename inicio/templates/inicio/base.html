@@ -45,10 +45,10 @@
 
                 {% if user.is_authenticated %}
 
-                <h6 align="center">Usuario: {{request.user}}</h6>
+                <h6 align="center">Hola {{request.user}}!</h6>
 
                 <form class="form-inline">
-                    <button class="btn btn-info" type="button"><a href="/logout">Cerrar sesión</a></button>
+                    <button class="btn btn-info border-left" type="button"><a href="/logout">Cerrar sesión</a></button>
 
                 </form>
 
