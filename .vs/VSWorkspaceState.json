@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\alojamientos",
+    "\\alojamientos\\templates",
+    "\\alojamientos\\templates\\alojamientos",
+    "\\inicio",
+    "\\inicio\\templates",
+    "\\inicio\\templates\\inicio"
   ],
-  "SelectedNode": "\\usuario",
+  "SelectedNode": "\\alojamientos\\templates\\alojamientos\\alojamiento_detail.html",
   "PreviewInSolutionExplorer": false
 }
