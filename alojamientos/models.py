@@ -26,7 +26,7 @@ class Alojamiento(models.Model):
     autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     barrio = models.CharField(max_length=2, choices=BARRIOS)
     direccion = models.CharField(max_length=50, default="Sin dirección")
-    titulo = models.CharField(max_length=25)
+    titulo = models.CharField(max_length=45)
     telefono = models.DecimalField(max_digits=15, decimal_places=0)
     texto = models.TextField()
     fecha_de_creacion = models.DateTimeField(default=timezone.now)

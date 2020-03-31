@@ -3,8 +3,8 @@
 
     {% block content %}
 
-    <h2 align=center>Alojamientos destacados</h2>
-    <div class="row">
+    <h2 class="title-home" align=center>Alojamientos destacados</h2>
+    <div class="row alojamientos-list">
         {% for alojamiento in alojamientos %}
 
         <div class="col-md-4">
@@ -14,7 +14,7 @@
                 </a>
                 <div class="card-body">
                     <h4 class="card-title"><a href="{% url 'alojamiento_detail' pk=alojamiento.pk %}">{{ alojamiento.titulo }}</a></h4>
-                    {{ alojamiento.direccion|linebreaksbr }}</p>
+                    <p><b>Dirección:</b> {{ alojamiento.direccion|linebreaksbr }}</p>
 
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">

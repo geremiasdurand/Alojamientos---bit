@@ -1,4 +1,9 @@
-﻿nav .btn a, .post-home .btn a {
+﻿body  p {
+    color:#808080;
+}
+
+
+nav .btn a, .post-home .btn a {
     text-decoration: none;
     color: #fff;
 }
@@ -81,7 +86,22 @@ h4 a, .card-body a, .post-home h3 {
 
 .alojamiento-home .btn-info a {
     color:#fff;
-} 
+}
+
+
+.alojamiento-detail .btn-comment {
+    margin:20px 0;
+}
+
+    .alojamiento-detail .btn-comment button {
+        margin:0 auto;
+        display:table;
+    }
+
+.title-home {
+    margin-bottom: 20px;
+    color: #17a2b8
+}
 
 footer {
     padding: 40px;
