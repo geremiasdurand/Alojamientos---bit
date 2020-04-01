@@ -5,7 +5,7 @@ from django.shortcuts import redirect
 
 # Create your views here.
 def index(request):
-    #Se utiliza un QuerySet para obtener los alojamientos que tienen son sponsors (is_sponsored==True)
+    #Se utiliza un QuerySet para obtener los alojamientos que son sponsors (is_sponsored==True)
     #Y se los ordena segun su fecha de creacion
     alojamientos = Alojamiento.objects.all().filter(is_sponsored=True).order_by('-fecha_de_creacion')
     #Se renderiza el HTML y se devuelve un objeto para que se utilice

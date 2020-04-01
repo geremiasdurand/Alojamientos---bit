@@ -3,6 +3,9 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
+    #Se llaman a las funciones de views.py y se les registra un link
+    #Los valores con <int:pk> trabajan con un parametro para obtener
+    #datos de la base de datos distintos
     path('', views.alojamiento_list, name='alojamiento_list'),
     path('<int:pk>/', views.alojamiento_detail, name='alojamiento_detail'),
     path('nuevo', views.alojamiento_new, name='alojamiento_new'),

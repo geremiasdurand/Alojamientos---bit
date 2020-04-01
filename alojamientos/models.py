@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
-# Create your models here.
+#Modelo de Alojamiento con el que se basa para crear la tabla de la base de datos
 class Alojamiento(models.Model):
 
     BARRIOS = (
@@ -35,7 +35,7 @@ class Alojamiento(models.Model):
     def __str__(self):
         return self.titulo
 
-
+#Modelo de Comentario con el que se basa para crear la tabla de la base de datos
 class Comentario(models.Model):
     alojamiento = models.ForeignKey("alojamientos.Alojamiento", on_delete=models.CASCADE, related_name='comentario')
     autor = models.ForeignKey("auth.User", on_delete=models.CASCADE, blank=True, null=True)
