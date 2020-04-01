@@ -5,28 +5,17 @@
 
   <h3 align=center>CONTACTO</h3>
   <p align=center>Contacta con nosotros, a la brevedad responderemos todas tus dudas.</p>
-  </h3>
+  <div class="row justify-content-center">
+      <div class="col-6">
 
-  <div align=center class="video">
-    <body>
-              <ul>
-                  <li>
-                      <label for="name">Nombre:</label>
-                      <input type="text" id="name" name="user_name" />
-                  </li>
-                  <li>
-                      <label for="mail">E-mail:</label>
-                      <input type="email" id="mail" name="user_mail" />
-                  </li>
-                  <li>
-                      <label for="msg">Mensaje:</label>
-                      <textarea id="msg" name="user_message"></textarea>
-                  </li>
-                  <li class="button">
-                      <button type="submit"><a href="mailto:nuestro_email"</a>Enviar mensaje</button>
-                  </li>
-              </ul>
-    </body>
+          <hr class="mt-0 mb-4">
+          <h1 class="mt-2">Agregar alojamiento</h1>
+          <form method="POST" class="post-form">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit" class="btn btn-info"">Añadir alojamiento</button>
+          </form>
+      </div>
   </div>
 
 {% endblock %}
