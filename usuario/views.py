@@ -20,5 +20,5 @@ def register(response):
             return redirect("/login")
         else:
             form = RegisterForm()
-        #Renderiza el HTML y le da valores al formulario
+        #Renderiza el HTML y le da valores al formulario si es que ya tenia
         return render(response, "usuario/register.html", {"form":form})

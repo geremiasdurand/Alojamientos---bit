@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+#Modelo de Contacto con el que se basa para crear la tabla de la base de datos
 class Contacto(models.Model):
     nombre = models.CharField(max_length=50)
     email = models.EmailField()
