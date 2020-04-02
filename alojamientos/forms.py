@@ -10,6 +10,7 @@ class AlojamientoForm(forms.ModelForm):
         #Campos que aparecen en el form
         fields = ("titulo", "barrio", "direccion", "telefono", "texto",)
 
+
 #Formulario de creacion de Comentario que hereda de ModelForm
 class ComentarioForm(forms.ModelForm):
 
