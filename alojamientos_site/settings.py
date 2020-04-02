@@ -73,6 +73,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'alojamientos_site.wsgi.application'
 
+# FIles upload
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
