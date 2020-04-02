@@ -1,5 +1,6 @@
 <p1>
 {% extends 'inicio/base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -12,7 +13,7 @@
          
           <form align=center method="POST" class="post-form">
               {% csrf_token %}
-              {{ form.as_p }}
+              {{ form|crispy }}
               <button type="submit" class="btn btn-info"">Enviar mensaje</button>
           </form>
       </div>
