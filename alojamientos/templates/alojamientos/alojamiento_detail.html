@@ -36,17 +36,20 @@
                 {% endif %}
 
                 {% if not user.is_authenticated %}
-                <form class="form-inline">
-                    <button class="btn btn-info" type="button"><a href="/login">Inicia sesión para añadir tu opinión</a></button>
+                <div class="btn-comment">
+                    <form class="form-inline">
 
-                </form>
-                {% endif %}
+                        <button class="btn btn-info" type="button"><a href="/login">Inicia sesión para añadir tu opinión</a></button>
 
-            </div>
-            <div class="col-md-8">
-                <p class="lead"><b>Descripción:</b></p>
-                <p class="lead">{{ alojamiento.texto|linebreaksbr }}</p>
-            </div>
+                    </form>
+                    </div>
+                    {% endif %}
+
+                </div>
+                <div class="col-md-8">
+                    <p class="lead"><b>Descripción:</b></p>
+                    <p class="lead">{{ alojamiento.texto|linebreaksbr }}</p>
+                </div>
             </div>
 
        
@@ -65,7 +68,7 @@
                         {{ comentario.created_date }}
                     </small>
                     {% if comentario.autor == request.user or request.user.is_superuser == 1%}
-                    <a class="btn btn-default" href="{% url 'eliminar_comentario' pk=comentario.pk %}">Borrar comentario</a>
+                    <a class="btn btn-default" href="{% url 'eliminar_comentario' pk=comentario.pk %}">Borrar opinión</a>
                     {% endif %}
                 </div>
                 <strong>{{ comentario.autor }}</strong>
@@ -75,7 +78,7 @@
         </div>
 
         {% empty %}
-        <p>Aún no hay comentarios :(</p>
+        <p>Aún no hay opiniones :(</p>
         {% endfor %}
 
 
