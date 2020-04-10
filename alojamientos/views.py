@@ -24,7 +24,7 @@ def alojamiento_new(request):
     #Se verifica que el metodo sea POST
     if request.method == "POST":
         #Se guarda el formulario en un objeto
-        form = AlojamientoForm(request.POST)
+        form = AlojamientoForm(request.POST, request.FILES)
         #Se verifica si el formulario es valido y luego se guarda a la base de datos
         if form.is_valid():
             alojamiento = form.save(commit=False)
@@ -76,7 +76,7 @@ def alojamiento_edit(request, pk):
     #Se verifica que el metodo sea POST
     if request.method == "POST":
         #Se le da valor al formulario segun el objeto obtenido
-        form = AlojamientoForm(request.POST, instance=instancia)
+        form = AlojamientoForm(request.POST, request.FILES, instance=instancia)
         #Se verifica si el formulario es valido y luego se guarda a la base de datos
         if form.is_valid():
             instancia = form.save(commit=False)

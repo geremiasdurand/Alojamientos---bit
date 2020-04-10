@@ -8,7 +8,7 @@ class AlojamientoForm(forms.ModelForm):
         #Modelo a utilizar es el creado en models.py
         model = Alojamiento
         #Campos que aparecen en el form
-        fields = ("titulo", "barrio", "direccion", "telefono", "texto",)
+        fields = ("titulo", "barrio", "direccion", "telefono", "texto", "image")
 
 
 #Formulario de creacion de Comentario que hereda de ModelForm
