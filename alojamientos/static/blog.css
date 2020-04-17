@@ -1,0 +1,108 @@
+﻿body  p {
+    color:#808080;
+}
+
+
+nav .btn a, .post-home .btn a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav .btn, nav .btn:hover {
+    margin: 10px 0 0 10px;
+    background-color: transparent;
+    border: none;
+}
+
+    nav .btn a {
+        color: #17a2b8;
+    }
+
+        nav .btn a:hover {
+            color: #ff5a5f;
+        }
+
+
+
+nav .btn.border-left {
+    border-left:1px solid;
+}
+
+.text-muted {
+    font-size: 12px;
+}
+
+
+.post-home .lead{
+    margin-top:20px;
+
+}
+
+.jumbotron {
+    padding: 2rem 2rem !important;
+    background-color: #fff;
+    border-bottom: 1px dashed #ff5a5f;
+}
+
+    .jumbotron h1, h1, h2, h3, h4, h5, h6, nav a {
+        color: #ff5a5f;
+        font-family: 'Bellota Text', cursive;
+    }
+
+h4, h5, h6 {
+    color: #17a2b8;
+    font-family: 'Bellota Text', cursive;
+}
+
+.footer-home a {
+    color: #17a2b8;
+    font-weight: bold;
+}
+
+
+h4 a, .card-body a, .post-home h3 {
+    color: #ff5a5f;
+}
+
+.card-body .btn-outline-secondary {
+    border-color: #ff5a5f;
+}
+
+    .card-body .btn-outline-secondary:hover {
+        background-color: white;
+        border-color: #17a2b8;
+    }
+
+    .card-body .btn-outline-secondary a:hover {
+      color: #17a2b8;
+      text-decoration:none;
+    }
+
+.add-home {
+    margin-bottom: 20px;
+}
+
+.add-home a {color:#fff;}
+
+.alojamiento-home .btn-info a {
+    color:#fff;
+}
+
+
+.alojamiento-detail .btn-comment {
+    margin:20px 0;
+}
+
+    .alojamiento-detail .btn-comment button {
+        margin:0 auto;
+        display:table;
+    }
+
+.title-home {
+    margin-bottom: 20px;
+    color: #17a2b8
+}
+
+footer {
+    padding: 40px;
+}
