@@ -23,7 +23,7 @@
             <div class="col-md-4">
 
 
-                <img class="img-fluid" src="http://shineit.solutions/blog/alojamiento.png">
+                <img class="img-fluid" src="{{alojamiento.image.url}}">
 
                 {% if user.is_authenticated and alojamiento.autor != request.user %}
                 <div class="btn-comment">
@@ -32,7 +32,7 @@
                     </form>
                 </div>
                 {% else %}
-                <!--<hr> <h6 align=center>No puedes opinar en tu propio alojamiento</h6>-->
+                <hr> <h6 align=center>No puedes opinar en tu propio alojamiento</h6>
                 {% endif %}
 
                 {% if not user.is_authenticated %}
@@ -52,7 +52,7 @@
                 </div>
             </div>
 
-       
+
 
     </div>
         <hr>

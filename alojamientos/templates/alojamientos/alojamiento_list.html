@@ -16,8 +16,7 @@
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
                     <a href="{% url 'alojamiento_detail' pk=alojamiento.pk %}">
-                      <img src="{{alojamiento.image.url}}""
-                        <img class="card-img-top" src="http://shineit.solutions/blog/alojamiento.png">
+                        <img class="card-img-top" src="{{alojamiento.image.url}}">
                     </a>
                     <div class="card-body">
                         <h4 class="card-title"><a href="{% url 'alojamiento_detail' pk=alojamiento.pk %}">{{ alojamiento.titulo }}</a></h4>
